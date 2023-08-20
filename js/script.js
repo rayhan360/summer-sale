@@ -6,22 +6,22 @@ function clickBtn(target) {
   const p = document.createElement('p');
   p.innerText = `${count + 1}. ${item}`;
   selectedItemContainer.appendChild(p);
-//   console.log(target.children[1].children[2].innerText.split(" ")[0]);
+  //   console.log(target.children[1].children[2].innerText.split(" ")[0]);
   const price = target.children[1].children[2].innerText.split(" ")[0];
   total = parseInt(total) + parseInt(price);
   document.getElementById('total').innerText = total.toFixed(2)
 
   const restBtn = document.getElementById('purchase')
-  if(total >= 0){
+  if (total >= 0) {
     restBtn.removeAttribute('disabled')
-  }else{
+  } else {
     restBtn.setAttribute('disabled', true)
   }
 
   const applyBtn = document.getElementById('cuponButton');
-  if(total >= 200){
+  if (total >= 200) {
     applyBtn.removeAttribute('disabled')
-  }else{
+  } else {
     applyBtn.setAttribute('disabled', true)
   }
 
@@ -51,6 +51,21 @@ document.getElementById('cuponButton').addEventListener('click', function () {
   }
 })
 
-document.getElementById('reset-btn').addEventListener('click', function(){
+document.getElementById('reset-btn').addEventListener('click', function () {
   window.location.href = 'index.html'
 })
+
+
+
+function copyText() {
+  const textToCopy = document.getElementById('text-to-copy')
+  const hiddenText = document.createElement('textarea');
+  hiddenText.textContent = textToCopy.textContent;
+  hiddenText.style.display = 'none';
+  document.body.appendChild(hiddenText);
+  navigator.clipboard.writeText(hiddenText.textContent);
+  hiddenText.remove();
+}
+
+const button = document.getElementById('button');
+button.addEventListener('click', copyText);

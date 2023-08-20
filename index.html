@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Work+Sans:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
-        <!-- Custom css  -->
+    <!-- Custom css  -->
     <style>
         body {
             font-family: 'Oswald', sans-serif;
@@ -36,8 +36,9 @@
                     <p class="py-6 text-4xl text-[#111] font-bold">Purchase TK 200 or <br> above & get <span
                             class="text-[#E527B2]">20% off</span>.</p>
                     <div class="flex gap-5 items-center justify-center">
-                        <p class="text-[#111] text-lg">Use Promo Code</p><button
-                            class="bg-[#E527B2] text-white px-4 py-2 rounded-md">SELL200</button>
+                        <p class="text-[#111] text-lg">Use Promo Code</p>
+                        <button class="bg-[#E527B2] text-white px-4 py-2 rounded-md" id="button">SELL200</button>
+                        <p id="text-to-copy" style="display: none;">SELL200</p>
                     </div>
                 </div>
             </div>
@@ -499,20 +500,25 @@
                     <hr>
                     <div id="selected-items"></div>
                     <div class="cart-box mt-5 mb-5" id="cart">
-                        <h6>Total Price: <span id="total" style="color: gray;">00.00</span></h6>
-                        <h6>Discount: <span id="entry" style="color: gray;">00.00</span></h6>
-                        <h5>Total: <span id="grantTotal" style="color: gray;">00.00</span></h5>
+                        <h6>Total Price: <span id="total" style="color: gray;">00.00</span><span class="text-gray-500">
+                                TK</span></h6>
+                        <h6>Discount: <span id="entry" style="color: gray;">00.00</span><span class="text-gray-500">
+                                TK</span></h6>
+                        <h5>Total: <span id="grantTotal" style="color: gray;">00.00</span><span class="text-gray-500">
+                                TK</span></h5>
                     </div>
                     <hr />
                     <!-- Open the modal using ID.showModal() method -->
-                    <button class="btn bg-[#E527B2] px-4 py-2 text-white mt-8" onclick="my_modal_5.showModal()" id="purchase" disabled>Make Purchase</button>
+                    <button class="btn bg-[#E527B2] px-4 py-2 text-white mt-8" onclick="my_modal_5.showModal()"
+                        id="purchase" disabled>Make Purchase</button>
                     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                         <form method="dialog" class="modal-box">
                             <img src="images/congo.png" class="mx-auto" alt="">
                             <p class="py-4 text-[#111] text-3xl font-bold text-center">Congratulations</p>
                             <p class="py-4 text-gray-500 font-medium text-center">Your Purchase the product</p>
                             <div class="text-center">
-                                <button id="reset-btn" class="btn bg-[#E527B2] px-4 py-2 w-40 text-white">Make Purchase</button>
+                                <button id="reset-btn" class="btn bg-[#E527B2] px-4 py-2 w-40 text-white">Make
+                                    Purchase</button>
                             </div>
                         </form>
                     </dialog>
@@ -520,10 +526,6 @@
             </div>
         </section>
     </main>
-
-
-
-
 
 
 
